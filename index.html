@@ -1,41 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>DoYouKnowJS Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css" />
-  </head>
-  <body>
-    <main class="quiz">
-      <header>
-        <h1>Do You Know It?</h1>
-      </header>
-      <section>
+</head>
+<body>
+ 
+        <div>
+            <h1>Timed JS Quiz</h1>
+            <button class="start">Start</button>
+        </div>
+      
         <div class="intro">
+            <div class="toknowtitle">
+               <h2>Quiz Information</h2>
+            </div>
+            <div class="toknowlist">
+                <div class="toknow">1. You must pick an option to go to the next question</div>
+                <div class="toknow">2. Wrong answers penalize you <span class="penalty">3 seconds</span></div>
+                <div class="toknow">2. You have <span class="penalty">90 seconds</span> for the quiz</div>
+                <div class="toknow">3. The most time left at the end is the higher score.</div>
+            </div>
+            <br>
             <div>
-                <h2>TIMED JS QUIZ</h2>
-                <P>Each wrong answer deducts 3 seconds.Goal is to finish with the most time left.</P>
-                <h3 id="countdown"></h3>
-                <button id="start">Start</button>
+                <button class="next">Continue</button>
             </div>
         </div>
-         <div id="questions">
-            <p></p>
-          
-         </div>
-         <div class="answer">
-            <button class="optiona"></button>
-            <button class="optionb"></button>
-            <button class="optionc"></button>
-            <button class="optiond"></button>
-          </div>
-          <div class="validation">
-          </div>
-      </section>
-      
-    </main>
-    <script src="./assets/script.js"></script>
-  </body>
+
+        <div class="quizsection" id="quiz">
+            <header class="quizheader">
+                <div class="quiztitle">Do You Know It?</div>
+                <div class="tiktok">
+                    <div id="tiktoc_txt">Seconds left</div>
+                    <div class="countdown" id="timer"></div>
+                </div>
+            </header>
+            <main class="quizbox" id="quiz">
+                <section class="questionmain">
+                    <h2 id="question"></h2>
+                    <ul>
+                        <li>
+                            <input name="chooseanswer" type="radio" id="a" class="option">
+                            <label for="a" id="a_text"> Answer</label>
+                        </li>
+                        <li>
+                            <input name="chooseanswer" type="radio" id="b" class="option">
+                            <label for="b" id="b_text"> Answer</label>
+                        </li>
+                        <li>
+                            <input name="chooseanswer" type="radio" id="c" class="option">
+                            <label for="c" id="c_text"> Answer</label>
+                        </li>
+                        <li>
+                            <input name="chooseanswer" type="radio" id="d" class="option">
+                            <label for="d" id="d_text"> Answer</label>
+                        </li>
+                    </ul>
+                    <div class="correct/incorrect"></div>
+
+                    <br>
+                    <br>
+                    <div>
+                        <button class="submitanswer">Continue</button>
+                    </div>
+
+                </section>
+            </main>
+        </div>
+
+        <section class="submitscores">
+            <div class="scoreboard">
+                <div class="scoretitle">
+                    <h4>Score</h4>
+                </div>
+                <div id="quiz">
+                    <p>Name: <span class="notsure"><input placeholder="full name" class="grade"></span></p>
+                        <button class="submitbutton" id="myscore">Submit</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="leaderboard">
+            <div class="list">
+                <div class="rules-heading">
+                    <h2> Timed JS Quiz</h2>
+                    <h3> Score Board </h3>
+                    <ol class="highscores">
+                        <!-- <li id="score"></li> -->
+                    </ol>
+                    <button class="exit">Done</button>
+                </div>
+            </div>
+        </section>
+
+ <script src="./assets/script.js"></script>   
+</body>
 </html>
+
+
