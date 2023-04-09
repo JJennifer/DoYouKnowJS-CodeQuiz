@@ -50,8 +50,10 @@ var d_text = document.getElementById("d_text");
 var penalty = document.querySelectorAll(".option");
 var questions = document.getElementById("question");
 var continuequiz = document.querySelector(".submitanswer");
-var connect = document.getElementById("quiz")
-var score = document.querySelector("#score")
+var connect = document.getElementById("quiz");
+var score = document.querySelector("#score");
+var submithighscore =document.querySelector(".submitbutton");
+ var initials = document.getElementById(".grade");
 
 
 startbutton.addEventListener("click", () => {
@@ -124,7 +126,20 @@ continuequiz.addEventListener("click", (event) => {
     } else {
         connect.innerHTML = `
         <h2>You have ${score}/${theQuestions.length} correct!</h2>
-        
         `
     }
 })
+
+submithighscore.addEventListener('click', () => {
+
+localStorage.setItem("Last Score", JSON.stringify(timeremaining));
+renderMessage();
+
+});
+
+function renderMessage() {
+  var loggedscore = JSON.parse(localStorage.getItem("Last Score"));
+  if (loggedscore = null ) {
+    document.querySelector(".highscore").textContent = initials.textContent + loggedscore.timeremaining
+  }
+}
