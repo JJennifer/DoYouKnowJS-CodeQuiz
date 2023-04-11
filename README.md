@@ -32,9 +32,9 @@ THEN I can save my initials and my score
 
 The following animation demonstrates the application functionality:
 
-![A user clicks through an interactive coding quiz, then enters initials]()
+![A user clicks through an interactive coding quiz, then enters initials](./assets/jjennifer.github.io_DoYouKnowJS-CodeQuiz_.png)
 
 ## Deploy Application
 
-
+[Quiz](https://jjennifer.github.io/DoYouKnowJS-CodeQuiz/)
 
