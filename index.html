@@ -20,9 +20,9 @@
             </div>
             <div class="toknowlist">
                 <div class="toknow">1. You must pick an option to go to the next question</div>
-                <div class="toknow">2. Wrong answers penalize you <span class="penalty">3 seconds</span></div>
+                <div class="toknow">2. Wrong answers penalize you <span class="penalty">1 additonal second</span></div>
                 <div class="toknow">2. You have <span class="penalty">90 seconds</span> for the quiz</div>
-                <div class="toknow">3. The most time left at the end is the higher score.</div>
+                <div class="toknow">3. The most time left at the end is the higher score</div>
             </div>
             <br>
             <div>
@@ -75,13 +75,12 @@
             <div class="scoreboard">
                 <div class="scoretitle">
                     <h4>Score</h4>
-                </div>
-                <div id="quiz">
-
-                <label>Name: <span class=" ">
-                <input placeholder="initials" class="grade"></input></p>
+                </form>
+                <div id="ini">
+                <label for="initials">Name: </label>
+                <input type="text" placeholder="initials" id="grade" name="initials"></input>
                         <button class="submitbutton" id="myscore">Submit</button>
-                </div>
+                </form>
             </div>
         </section>
 
@@ -90,9 +89,9 @@
                 <div class="rules-heading">
                     <h2> Timed JS Quiz</h2>
                     <h3> Score Board </h3>
-                    <ol class="highscores">
+                    <h4 class="highscores">
                         
-                    </ol>
+                    </h4>
                     <button class="exit">Done</button>
                 </div>
             </div>

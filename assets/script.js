@@ -33,7 +33,7 @@ var theQuestions = [
             correct:"b",
         },
     
-    {question: "How do you prevent default?", 
+    {question: "How do you prevent default in a form?", 
             a:"stop",
             b:"event.preventDefault();",
             c:"return;",
@@ -41,7 +41,7 @@ var theQuestions = [
             correct:"b",
           },
 
-]
+];
 
 var a_text = document.getElementById("a_text");
 var b_text = document.getElementById("b_text");
@@ -53,12 +53,12 @@ var continuequiz = document.querySelector(".submitanswer");
 var connect = document.getElementById("quiz");
 var score = document.querySelector("#score");
 var submithighscore =document.querySelector(".submitbutton");
- var initials = document.getElementById(".grade");
+var initialsinput = document.getElementById("grade");
 
 
 startbutton.addEventListener("click", () => {
     guidelines.style.display = "initial"
-})
+});
 
 function beginTime() {
     var timer = setInterval(function (){
@@ -81,9 +81,9 @@ nextbutton.addEventListener("click", () => {
 
     beginTime()
     
-})
+});
 
-submitanswers ()
+submitanswers ();
 
 function submitanswers() {
     wrong()
@@ -94,19 +94,20 @@ function submitanswers() {
     b_text.innerText = attemptscore.b
     c_text.innerText = attemptscore.c
     d_text.innerText = attemptscore.d
-}
+};
 
 
 function wrong(){
-    penalty.forEach(penalty => penalty.checked = false)
-}
+   penalty.forEach(penalty => penalty.checked = false);
+   timeremaining--
+};
 
 function right() {
     let answer
     penalty.forEach(penalty => {
         if(penalty.checked){
             answer = penalty.id
-        }
+        } 
     })
     return answer
 };
@@ -118,7 +119,7 @@ continuequiz.addEventListener("click", (event) => {
     if(result) {
         if (result === theQuestions[attempt].correct)
         score++
-    }
+    } 
     attempt++
 
     if(attempt < theQuestions.length) {
@@ -128,18 +129,17 @@ continuequiz.addEventListener("click", (event) => {
         <h2>You have ${score}/${theQuestions.length} correct!</h2>
         `
     }
-})
+});
 
 submithighscore.addEventListener('click', () => {
 
+    var user ={
+        initials:initialsinput.value.trim(),
+    };
+localStorage.setItem("user", JSON.stringify(user));
 localStorage.setItem("Last Score", JSON.stringify(timeremaining));
-renderMessage();
 
 });
 
-function renderMessage() {
-  var loggedscore = JSON.parse(localStorage.getItem("Last Score"));
-  if (loggedscore = null ) {
-    document.querySelector(".highscore").textContent = initials.textContent + loggedscore.timeremaining
-  }
-}
+
+
